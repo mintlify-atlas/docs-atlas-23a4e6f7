@@ -1,0 +1,62 @@
+{
+  "projectType": "general",
+  "projectName": "Enterprise CSM Candidate Assignment",
+  "projectDescription": "A take-home assignment by Andrew Tsai for an Enterprise Customer Success Manager role at Mintlify, covering CS metrics, expansion strategy, product stickiness, and a Replit account expansion playbook.",
+  "theme": "willow",
+  "primaryColor": "#1a56db",
+  "lightColor": "#e8effe",
+  "darkColor": "#1e3a8a",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Overview",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": ["introduction"]
+          }
+        ]
+      },
+      {
+        "tab": "Task 1: Building a CS System",
+        "groups": [
+          {
+            "group": "CS Strategy",
+            "pages": [
+              "task-1-building-cs-system/customer-success-metrics",
+              "task-1-building-cs-system/expansion-levers",
+              "task-1-building-cs-system/product-stickiness-churn-prevention",
+              "task-1-building-cs-system/engineering-resource-allocation"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Task 2: Expand a Customer",
+        "groups": [
+          {
+            "group": "Replit Expansion",
+            "pages": [
+              "task-2-expand-customer/customer-expansion-playbook"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "CS metrics and KPI framework (NRR, GRR, customer health indicators)",
+    "Expansion levers: seats, AI credits, tier upgrades, enterprise features",
+    "Product stickiness analysis: Git sync, API playground, AI Assistant, MCP",
+    "90-day onboarding playbook to reduce churn and embed sticky features",
+    "Engineering resource allocation decision framework",
+    "Replit account expansion playbook with qualification criteria and readiness signals"
+  ],
+  "publicApiSurface": [
+    "Customer Success Metrics and KPIs",
+    "Expansion Levers",
+    "Product Stickiness and Churn Prevention",
+    "Engineering Resource Allocation",
+    "Customer Expansion Playbook (Replit)"
+  ]
+}

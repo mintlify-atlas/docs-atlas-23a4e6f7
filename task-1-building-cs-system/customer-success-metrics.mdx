@@ -1,0 +1,117 @@
+---
+title: "Customer Success Metrics, KPIs, and Health Signals"
+description: "The metrics that signal CS function performance, track individual customer health, and guide feature prioritization decisions for engineering and product teams."
+---
+
+Customer success at Mintlify is measured across three interconnected layers: whether the CS function itself is performing, whether individual customers are healthy and getting value, and whether the product is evolving in ways that unlock growth. This page covers each layer in turn, with recommended targets and the reasoning behind them.
+
+---
+
+## Success signals
+
+Metrics to track whether customer success is succeeding as a function, with sample targets where applicable:
+
+- **Net Revenue Retention (NRR)**: Revenue retained and expanded from existing customers over a period; core indicator of CS and product impact.
+
+<Info>
+  **Target: ≥ 110%.**
+</Info>
+
+<Note>
+  **NRR formula:** (Starting MRR + Expansion MRR − Contraction MRR − Churned MRR) ÷ Starting MRR
+
+  **Components by revenue type:**
+
+  - **Starting MRR (baseline)**: Revenue at the start of the period; the denominator (baseline to retain and grow).
+  - **Expansion MRR**: Revenue added from upsells and expansion in the period.
+  - **Contraction MRR**: Revenue lost from downsells in the period.
+  - **Churned MRR**: Revenue lost from customers who left in the period.
+</Note>
+
+- **Gross Revenue Retention (GRR)**: Pure churn and downsell only (no expansion in the numerator).
+
+<Info>
+  **Target: ≥ 90%.**
+</Info>
+
+- **Churn rate (logo & ARR)**: % customers lost and % ARR churned per period (monthly/quarterly).
+- **Expansion ARR / Expansion rate**: ARR from upsells (AI credits, Agent Workflows, seats, enterprise add-ons).
+- **Time to first published doc**: Time from signup to first live doc page.
+- **Migration completion rate**: % of migrating customers who fully complete vs. abandon. Stalled migrations are a major churn risk; consider pages migrated as a supporting metric.
+- **Churn rate by segment**: Compare churn for segments with dedicated CS vs. without to quantify CS impact.
+- **DAU/MAU**: Active user ratio and levels; indicates stickiness and adoption depth.
+- **Reference / Advocacy rate**: % or count of customers willing to be references or case studies; lagging satisfaction indicator.
+- **CSAT (Customer Satisfaction Score)**: Survey-based satisfaction with a specific interaction or journey (e.g., onboarding, support).
+- **NPS (Net Promoter Score)**: Survey-based likelihood to recommend (promoters vs. detractors).
+
+<Info>
+  Some metrics such as **CSAT**, **NPS**, and **Time to first published doc** are most applicable when CSMs own or heavily influence onboarding; otherwise results may not reflect CS impact.
+</Info>
+
+---
+
+## Customer health indicators
+
+Customer health depends on docs staying current and usable by both humans and AI. **Document freshness** and **Assistant usage** are early predictors of churn or expansion. The indicators below are ordered from most predictive of growth to most automated or hardest to act on:
+
+- **Documentation page count growth and freshness**: Growth can be measured in two ways: **quantity** (new pages over time) and **freshness** (how much existing content is updated). A site can have stable page count but low freshness, or high freshness but no growth; both matter for health and AI accuracy. Track both and define benchmarks with your customer.
+
+<Info>
+  **Example freshness metric:** % of docs updated in the last 30 or 90 days (e.g. **target ≥ 10%**).
+</Info>
+
+- **Team contribution activity**: User count and contribution frequency. Multiple contributors can indicate a healthy, embedded workflow; single-contributor accounts are higher churn risk.
+- **Reader engagement metrics**: Pages per session, search success rate, time on page. Declining metrics undermine internal cost justification and signal risk.
+- **AI Assistant query volume and issue deflection rate**: How much the assistant is used and how often it resolves questions without escalation. Strong adoption and deflection indicate value delivery.
+- **Search failure rate and broken links**: Share of search queries with no useful answer (findability; distinct from issue deflection). High rates of failed searches or broken links hurt reader experience and reflect poorly on Mintlify; CS should flag and help remediate even when the cause is customer content.
+- **AI feature adoption depth**: Which AI-native features are enabled (MCP, llms.txt, writing agent). Ideally track human vs. AI traffic separately for adoption and quality.
+- **Assistant/Agent interactions per seat**: Normalized adoption depth (not just total volume). Few power users can drive high volume with low per-seat; broad adoption shows high per-seat.
+
+<Tip>
+  Aggregate volume and per-seat interactions measure different things (total usage vs. breadth). Decide with your customer whether health is defined by total engagement, normalized adoption, or both.
+</Tip>
+
+- **Champion tracking**: The person who chose and set up Mintlify; when they leave, institutional knowledge goes with them. Track champion changes and re-onboard quickly.
+- **Git sync health**: Automated signal for sync status and errors. Alert on failures or spiking error rates so issues are fixed before they affect usage.
+
+---
+
+## Product feature prioritization
+
+**Overarching themes** to evaluate any request:
+
+- **Strategic fit**: Does this align with the product roadmap and where the product is headed?
+- **Engineering effort and risk**: Does effort vs. impact justify building it? Favor low-effort, high-impact work.
+- **Competitive differentiation**: Does this strengthen the moat and differentiation vs. competitors?
+
+The signals below help decide which features to build, ordered from strongest revenue alignment to most operational.
+
+<AccordionGroup>
+  <Accordion icon="chart-line" title="Request frequency and cohort reach">
+    Number of distinct customers requesting the feature, weighted by ARR. Fewer high-ARR customers blocked often outweigh many low-ARR requests.
+  </Accordion>
+
+  <Accordion icon="dollar-sign" title="ARR at risk / Revenue impact">
+    Amount of renewal or expansion dollars contingent on the feature.
+  </Accordion>
+
+  <Accordion icon="arrow-trend-up" title="Requests correlated with expansion revenue">
+    Which features do Enterprise customers or accounts that upgraded from Pro consistently ask for? These have a direct revenue case and should be weighted heavily.
+  </Accordion>
+
+  <Accordion icon="users" title="Requests from the ideal customer profile (ICP)">
+    Companies like HubSpot, Coinbase, Anthropic, PayPal, and Fidelity run docs as core infrastructure in an AI-driven, revenue-critical context. Weight requests from customers at this maturity over Hobby users who are unlikely to convert.
+  </Accordion>
+
+  <Accordion icon="ticket" title="Support ticket clustering by theme">
+    Themes that generate the most CS escalations point to product gaps or onboarding failures. Features that reduce support tickets or manual migration work have immediate ROI (customer effort / support cost reduction).
+  </Accordion>
+
+  <Accordion icon="message" title="AI Assistant conversation categories">
+    The Categories tab groups assistant conversations by topic and surfaces documentation gaps. Aggregated across customers, this reveals what readers cannot find: content and product gaps — and is a strong prioritization input.
+  </Accordion>
+
+  <Accordion icon="magnifying-glass" title="AI search failure queries">
+    Every query the AI fails to answer is logged. Failures are a direct roadmap signal: where the AI needs improvement or where customers need better tooling for more complete documentation.
+  </Accordion>
+</AccordionGroup>

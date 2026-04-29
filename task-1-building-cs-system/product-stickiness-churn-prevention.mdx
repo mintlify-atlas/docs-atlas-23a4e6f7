@@ -1,0 +1,72 @@
+---
+title: "Mintlify Feature Stickiness and Churn Risk Prevention"
+description: "Which Mintlify features carry the highest switching cost, how stickiness drives expansion revenue, and a 90-day onboarding playbook to embed customers deeply."
+---
+
+Churn risk at Mintlify is lowest when customers have deeply adopted features with high switching costs — Git sync, the API playground, AI Assistant, and MCP configuration. This page explains which features are stickiest, why stickiness connects directly to expansion revenue, and how to use a structured onboarding playbook to reach that depth within 90 days.
+
+---
+
+## Stickiest features
+
+Stickiness comes from **high switching cost**: leaving means rebuilding what took real effort to set up. The features below are ordered by switching-cost depth and impact.
+
+- **Git sync and docs-as-code**: Your repo is the source of truth; docs live in the customer's repository and Mintlify deploys with bi-directional sync and PR previews. Version history, PR review, and CI/CD are all integrated with Mintlify.
+- **API playground with OpenAPI**: Auto-generated from OpenAPI with auth (API keys, Bearer, basic). Once developers test endpoints in-docs, removing it is a real regression in developer experience.
+- **AI/agent infrastructure (LLM optimization + MCP)**: AI-readable docs (e.g. llms.txt) and MCP so agents can search docs in real time. For teams where AI-readability is strategic, switching means losing discoverability and agent infrastructure.
+- **AI Assistant and Agent Workflows**: Once teams rely on the Assistant daily for internal knowledge or customer support, switching cost is high and overage/upsell follows when 250 credits is not enough.
+- **Search, discoverability, and embedded components**: When users rely on Mintlify search to surface canonical answers for agents and humans, it becomes critical to daily workflow.
+- **Enterprise and integration depth**: Enterprise-grade features such as SSO, RBAC, audit logs, SLA, and white-label. Compliance-focused teams and durable frontend integrations (e.g. "Your docs, your frontend, our content engine") make migrations harder.
+
+### Why stickiness aligns with expansion revenue
+
+Mintlify does not charge per site or per page; revenue grows through other levers as usage scales. Track these as leading indicators for expansion:
+
+- **Repo size and sync volume**: leading indicators for seat, AI credit, and tier expansion
+- **More contributors**: seat expansion
+- **More reader and AI traffic**: AI credit consumption and tiered packages
+- **Multi-repo or scale needs**: Enterprise (unlimited DEV Community, SLA, professional services)
+
+CS should track these so revenue scales with usage, not only support cost.
+
+---
+
+## Preventing churn
+
+### 90-day onboarding playbook
+
+Get customers deeply using sticky features **as early as possible**. Each milestone raises switching cost and value; a customer who has hit all five by day **90** is unlikely to leave — migration would mean rebuilding version history, CI/CD, in-docs testing, Assistant reliance, and MCP-based workflows.
+
+| Milestone | Target day | Outcome |
+| --- | --- | --- |
+| Git sync configured | **Day 7** | Docs-as-code and CI/CD entanglement begin. |
+| API playground live | **Day 14** | Developers can test endpoints in-docs. |
+| Automating changelog | **Day 30** | Changelog tied to releases; doc freshness becomes habitual. |
+| AI Assistant enabled, reader-facing | **Day 60** | Habit and consumption start; value realization. |
+| MCP configured | **Day 90** | Docs as infrastructure for AI agents. |
+
+### Best practices
+
+Beyond the 90-day onboarding playbook, these practices help embed sticky features into customer workflows and reduce churn risk.
+
+<AccordionGroup>
+  <Accordion icon="code" title="Embed in workflows">
+    Make docs part of PR/CI with workflow templates, pre-commit hooks, GitHub Actions. Automated, habitual doc updates raise switching cost.
+  </Accordion>
+
+  <Accordion icon="shield-check" title="Protect AI Assistant quality">
+    Encourage canonical sources and content linting; use observability to detect low accuracy or decaying coverage. Add verification or provenance for high-stakes answers where relevant.
+  </Accordion>
+
+  <Accordion icon="chart-line" title="Value reinforcement and EBRs">
+    Monthly impact reports (time saved, traffic); quarterly EBRs on value delivered. Build references and address issues before escalation.
+  </Accordion>
+
+  <Accordion icon="eye" title="Proactive observability">
+    Use in-house analytics to detect decaying coverage or low Assistant accuracy and auto-open "docs health" plays with the customer.
+  </Accordion>
+
+  <Accordion icon="file-contract" title="Contractual and exit barriers">
+    Enterprise: multi-year contracts, onboarding packages, SLAs. High-risk: incentives (e.g. free AI credits, priority access) and churn root-cause analysis to inform product fixes.
+  </Accordion>
+</AccordionGroup>
